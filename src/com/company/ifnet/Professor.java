@@ -16,4 +16,10 @@ public class Professor extends Usuario{
     public void setArea(String area) {
         this.area = area;
     }
+
+    @Override
+    public String toString() {
+        return "Nome: " + this.getNome() + "  |  " + "Prontuário: " + this.getProntuario() + "  |  " +
+                "Area: " + this.getArea();
+    }
 }
