@@ -10,6 +10,7 @@ public class Aluno extends Usuario{
         this.email = email;
     }
 
+
     public String getEmail() {
         return email;
     }
@@ -25,4 +26,10 @@ public class Aluno extends Usuario{
     public void setCurso(String curso) {
         this.curso = curso;
     }
+
+    @Override
+    public String toString() {
+       return "Nome: " + this.getNome() + "  |  " + "Prontuário: " + this.getProntuario() + "  |  " +
+               "Email: " + this.getEmail() + "  |  " + "Curso: " + this.getCurso();
+     }
 }
