@@ -43,17 +43,13 @@ public class Main {
                     switch (opcao1){
                         case 1:
                             LimpaTela.limpatela();
-                            System.out.print("Nome do Aluno: ");
-                            String nA = leitura.nextLine();
-                            System.out.print("Prontuário: ");
-                            String pA = leitura.nextLine();
-                            System.out.print("E-mail: ");
-                            String eA = leitura.nextLine();
-                            System.out.print("Curso: ");
-                            String cA = leitura.nextLine();
-                            Aluno a = new Aluno(nA, pA, eA, cA);
-                            aluno.add(a);
-                            System.out.println("Aluno cadastrado com sucesso!");
+                            try{
+                                aluno.add(Aluno.cadastrarAluno());
+                            }catch (CadastroException e){
+                                System.out.println(e.getMessage());
+                            }
+
+
                             break;
                         case 2:
                             LimpaTela.limpatela();
@@ -118,6 +114,7 @@ public class Main {
                             System.out.print("Número: ");
                             numEscolhidoAluno = Integer.parseInt(leitura.nextLine());
                             aluno.remove(numEscolhidoAluno);
+                            System.out.println("Aluno excluído com sucesso!");
                             break;
                         case 2:
                             LimpaTela.limpatela();
@@ -134,6 +131,7 @@ public class Main {
                             System.out.print("Número: ");
                             numEscolhidoProf = Integer.parseInt(leitura.nextLine());
                             professor.remove(numEscolhidoProf);
+                            System.out.println("Professor excluído com sucesso!");
                             break;
                         case 3:
                             LimpaTela.limpatela();
@@ -148,6 +146,7 @@ public class Main {
                             System.out.print("Número: ");
                             numEscolhidoDisc = Integer.parseInt(leitura.nextLine());
                             disciplina.remove(numEscolhidoDisc);
+                            System.out.println("Disciplina excluída com sucesso!");
                             break;
                         case 0:
                             LimpaTela.limpatela();
@@ -233,7 +232,6 @@ public class Main {
         } while (opcao != 0);
 
         leitura.close();
-
-
     }
+
 }
