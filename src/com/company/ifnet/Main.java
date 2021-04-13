@@ -23,8 +23,9 @@ public class Main {
                     "3) Lista de Cadastro\n" +
                     "0) Sair\n");
 
-            System.out.print("Informe um número: ");
-            opcao = Integer.parseInt(leitura.nextLine());
+                System.out.print("Informe um número: ");
+                opcao = Integer.parseInt(leitura.nextLine());
+
 
             switch (opcao) {
                 //CASE DO MENU PRINCIPAL
@@ -48,30 +49,22 @@ public class Main {
                             }catch (CadastroException e){
                                 System.out.println(e.getMessage());
                             }
-
-
                             break;
                         case 2:
                             LimpaTela.limpatela();
-                            System.out.print("Nome do Professor: ");
-                            String nP = leitura.nextLine();
-                            System.out.print("Prontuário: ");
-                            String pP = leitura.nextLine();
-                            System.out.print("Área: ");
-                            String aP = leitura.nextLine();
-                            Professor p = new Professor(nP, pP, aP);
-                            professor.add(p);
-                            System.out.println("Professor cadastrado com sucesso!");
+                            try{
+                                professor.add(Professor.cadastrarProfessor());
+                            }catch (CadastroException e){
+                                System.out.println(e.getMessage());
+                            }
                             break;
                         case 3:
                             LimpaTela.limpatela();
-                            System.out.print("Nome da Disciplina: ");
-                            String nD = leitura.nextLine();
-                            System.out.print("Área: ");
-                            String aD = leitura.nextLine();
-                            Disciplina d = new Disciplina(nD, aD);
-                            disciplina.add(d);
-                            System.out.println("Disciplina cadastrada com sucesso!");
+                            try {
+                                disciplina.add(Disciplina.cadastrarDisciplina());
+                            }catch (CadastroException e){
+                                System.out.println(e.getMessage());
+                            }
                             break;
                         case 0:
                             LimpaTela.limpatela();
