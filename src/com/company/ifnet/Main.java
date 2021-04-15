@@ -11,6 +11,14 @@ public class Main {
         ArrayList<Professor> professor = new ArrayList<>();
         ArrayList<Disciplina> disciplina = new ArrayList<>();
 
+        Aluno aluno1 = new Aluno("Guilherme", "123", "eu@eu", "ads");
+        Aluno aluno2 = new Aluno("David", "246", "eu@eu", "ads");
+        Aluno aluno3 = new Aluno("Vini", "357", "eu@eu", "ads");
+
+        aluno.add(aluno1);
+        aluno.add(aluno2);
+        aluno.add(aluno3);
+
         Scanner leitura = new Scanner(System.in);
 
         int opcaoPrincipal;
@@ -190,9 +198,29 @@ public class Main {
 
 
                     case 2:
+                        int indexA = 0;
+                        for (Aluno alunoCadastrado : aluno) {
+                            System.out.println((indexA++) + " - "
+                                    + alunoCadastrado.toString());
+                        }
+
                         System.out.println("Escreva seu prontuário");
                         prontuario = leitura.nextLine();
+
                         // Inserir Logica para saber qual aluno será usado
+                        Aluno teste = null;
+                        System.out.println(prontuario.getClass().getSimpleName());
+                        for (Aluno alunoCadastrado: aluno) {
+                            if (prontuario.equals(alunoCadastrado.getProntuario())) {
+                                System.out.println("Deu certo");
+                                System.out.println(alunoCadastrado.getProntuario());
+                            }
+
+                        }
+
+                        //System.out.println(teste.toString());
+
+
                         limpaTela();
                         menuAluno();
                         int opcaoAluno = Integer.parseInt(leitura.nextLine());
