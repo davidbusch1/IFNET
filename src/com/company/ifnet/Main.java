@@ -44,7 +44,13 @@ public class Main {
         do {
                 menuPrincipal();
                 opcaoPrincipal = Integer.parseInt(leitura.nextLine());
-
+                //DECLARAÇÃO DE VARIÁVEIS
+                int numEscolhidoAluno;
+                int numEscolhidoProf;
+                Iterator var12;
+                int var10001;
+                Iterator var19;
+                Aluno alunoCadastrado;
                 switch (opcaoPrincipal) {
 
                     case 1:
@@ -55,7 +61,11 @@ public class Main {
                         switch (opcaoAdmin) {
                             case 0:
                                 limpaTela();
+<<<<<<< HEAD
                                 break;
+=======
+                                continue;
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                             //MENU DE CADASTRO DO ADMIN
                             case 1:
                                 limpaTela();
@@ -64,6 +74,7 @@ public class Main {
                                 switch (opcaoCadastro) {
                                     case 0:
                                         limpaTela();
+<<<<<<< HEAD
                                         break;
                                     //CADASTRO DE ALUNOS
                                     case 1:
@@ -83,15 +94,43 @@ public class Main {
                                             System.out.println(e.getMessage());
                                         }
                                         break;
+=======
+                                        continue;
+                                    //CADASTRO DE ALUNOS
+                                    case 1:
+                                        limpaTela();
+                                        try {
+                                            aluno.add(Aluno.cadastrarAluno());
+                                        } catch (CadastroException var18) {
+                                            System.out.println(var18.getMessage());
+                                        }
+                                        continue;
+                                    //CADASTRO DE PROFESSORES
+                                    case 2:
+                                        limpaTela();
+                                        try {
+                                            professor.add(Professor.cadastrarProfessor());
+                                        } catch (CadastroException var17) {
+                                            System.out.println(var17.getMessage());
+                                        }
+                                        continue;
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                                     //CADASTRO DE DISCIPLINAS
                                     case 3:
                                         limpaTela();
                                         try {
                                             disciplina.add(Disciplina.cadastrarDisciplina());
+<<<<<<< HEAD
                                         }catch (CadastroException e){
                                             System.out.println(e.getMessage());
                                         }
                                         break;
+=======
+                                        } catch (CadastroException var16) {
+                                            System.out.println(var16.getMessage());
+                                        }
+                                        continue;
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                                     default:
                                         limpaTela();
                                         System.err.println("Opção inválida!");
@@ -107,12 +146,17 @@ public class Main {
                                 switch (opcaoExcluir) {
                                     case 0:
                                         limpaTela();
+<<<<<<< HEAD
                                         break;
+=======
+                                        continue;
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                                     //EXCLUSÃO DE ALUNO
                                     case 1:
                                         limpaTela();
-                                        int indexA = 0, numEscolhidoAluno;
+                                        int indexA = 0;
                                         System.out.print("Informe o número do Aluno a ser excluído: \n\n");
+<<<<<<< HEAD
                                         for(Aluno listaAluno : aluno) {
                                             System.out.println((indexA++) + " - Nome: "
                                                     + listaAluno.getNome()
@@ -122,17 +166,31 @@ public class Main {
                                                     + listaAluno.getEmail()
                                                     + " | Curso: "
                                                     + listaAluno.getCurso());
+=======
+                                        var19 = aluno.iterator();
+
+                                        while(var19.hasNext()) {
+                                            alunoCadastrado = (Aluno)var19.next();
+                                            var10001 = indexA++;
+                                            System.out.println(var10001 + " - Nome: " + alunoCadastrado.getNome() + " | Prontuário: " + alunoCadastrado.getProntuario() + " | E-mail: " + alunoCadastrado.getEmail() + " | Curso: " + alunoCadastrado.getCurso());
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                                         }
+
                                         System.out.print("Número: ");
                                         numEscolhidoAluno = Integer.parseInt(leitura.nextLine());
                                         aluno.remove(numEscolhidoAluno);
                                         System.out.println("Aluno excluído com sucesso!");
+<<<<<<< HEAD
                                         break;
+=======
+                                        continue;
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                                     //EXCLUSÃO DE PROFESSOR
                                     case 2:
                                         limpaTela();
-                                        int indexP = 0, numEscolhidoProf;
+                                        int indexP = 0;
                                         System.out.print("Informe o número do Professor a ser excluído: \n\n");
+<<<<<<< HEAD
                                         for(Professor listaProfessor : professor) {
                                             System.out.println((indexP++) + " - Nome: "
                                                     + listaProfessor.getNome()
@@ -140,28 +198,55 @@ public class Main {
                                                     + listaProfessor.getProntuario()
                                                     + " | Área: "
                                                     + listaProfessor.getArea());
+=======
+                                        var12 = professor.iterator();
+
+                                        while(var12.hasNext()) {
+                                            Professor listaProfessor = (Professor)var12.next();
+                                            var10001 = indexP++;
+                                            System.out.println(var10001 + " - Nome: " + listaProfessor.getNome() + " | Prontuário: " + listaProfessor.getProntuario() + " | Área: " + listaProfessor.getArea());
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                                         }
+
                                         System.out.print("Número: ");
                                         numEscolhidoProf = Integer.parseInt(leitura.nextLine());
                                         professor.remove(numEscolhidoProf);
                                         System.out.println("Professor excluído com sucesso!");
+<<<<<<< HEAD
                                         break;
+=======
+                                        continue;
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                                     //EXCLUSÃO DE DISCIPLINA
                                     case 3:
                                         limpaTela();
-                                        int indexD = 0, numEscolhidoDisc;
+                                        int indexD = 0;
                                         System.out.print("Informe o número da Disciplina a ser excluída: \n\n");
+<<<<<<< HEAD
                                         for(Disciplina listaDisciplina : disciplina) {
                                             System.out.println((indexD++) + " - Titulo: "
                                                     + listaDisciplina.getNome()
                                                     + " | Área: "
                                                     + listaDisciplina.getArea());
+=======
+                                        Iterator var14 = disciplina.iterator();
+
+                                        while(var14.hasNext()) {
+                                            Disciplina listaDisciplina = (Disciplina)var14.next();
+                                            var10001 = indexD++;
+                                            System.out.println(var10001 + " - Titulo: " + listaDisciplina.getNome() + " | Área: " + listaDisciplina.getArea());
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                                         }
+
                                         System.out.print("Número: ");
-                                        numEscolhidoDisc = Integer.parseInt(leitura.nextLine());
+                                        int numEscolhidoDisc = Integer.parseInt(leitura.nextLine());
                                         disciplina.remove(numEscolhidoDisc);
                                         System.out.println("Disciplina excluída com sucesso!");
+<<<<<<< HEAD
                                         break;
+=======
+                                        continue;
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                                     default:
                                         limpaTela();
                                         System.err.println("Opção inválida!");
@@ -177,11 +262,16 @@ public class Main {
                                 switch (opcaoListar) {
                                     case 0:
                                         limpaTela();
+<<<<<<< HEAD
                                         break;
+=======
+                                        continue;
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                                     //EXIBIÇÃO DA LISTA DE ALUNOS
                                     case 1:
                                         limpaTela();
                                         System.out.println("Alunos cadastrados");
+<<<<<<< HEAD
                                         int indexA = 0;
                                         for(Aluno alunoCadastrado : aluno) {
                                             System.out.println((indexA++) + " - Nome: "
@@ -194,11 +284,26 @@ public class Main {
                                                     + alunoCadastrado.getCurso());
                                         }
                                         break;
+=======
+                                        numEscolhidoAluno = 0;
+                                        var19 = aluno.iterator();
+
+                                        while(true) {
+                                            if (!var19.hasNext()) {
+                                                continue label105;
+                                            }
+
+                                            alunoCadastrado = (Aluno)var19.next();
+                                            var10001 = numEscolhidoAluno++;
+                                            System.out.println(var10001 + " - Nome: " + alunoCadastrado.getNome() + " | Prontuário: " + alunoCadastrado.getProntuario() + " | E-mail: " + alunoCadastrado.getEmail() + " | Curso: " + alunoCadastrado.getCurso());
+                                        }
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                                     //EXIBIÇÃO DA LISTA DE PROFESSORES
                                     case 2:
                                         limpaTela();
                                         System.out.println("Professores cadastrados");
                                         int indexP = 0;
+<<<<<<< HEAD
                                         for(Professor professorCadastrado : professor) {
                                             System.out.println((indexP++) + " - Nome: "
                                                     + professorCadastrado.getNome()
@@ -208,10 +313,24 @@ public class Main {
                                                     + professorCadastrado.getArea());
                                         }
                                         break;
+=======
+                                        Iterator var20 = professor.iterator();
+
+                                        while(true) {
+                                            if (!var20.hasNext()) {
+                                                continue label105;
+                                            }
+
+                                            Professor professorCadastrado = (Professor)var20.next();
+                                            var10001 = indexP++;
+                                            System.out.println(var10001 + " - Nome: " + professorCadastrado.getNome() + " | Prontuário: " + professorCadastrado.getProntuario() + " | Área: " + professorCadastrado.getArea());
+                                        }
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                                     //EXIBIÇÃO DA LISTA DE DISCIPLINAS
                                     case 3:
                                         limpaTela();
                                         System.out.println("Disciplinas cadastradas");
+<<<<<<< HEAD
                                         int indexD = 0;
                                         for(Disciplina disciplinaCadastrada : disciplina) {
                                             System.out.println((indexD++) + " - Titulo: "
@@ -220,16 +339,33 @@ public class Main {
                                                     + disciplinaCadastrada.getArea());
                                         }
                                         break;
+=======
+                                        numEscolhidoProf = 0;
+                                        var12 = disciplina.iterator();
+
+                                        while(true) {
+                                            if (!var12.hasNext()) {
+                                                continue label105;
+                                            }
+
+                                            Disciplina disciplinaCadastrada = (Disciplina)var12.next();
+                                            var10001 = numEscolhidoProf++;
+                                            System.out.println(var10001 + " - Titulo: " + disciplinaCadastrada.getNome() + " | Área: " + disciplinaCadastrada.getArea());
+                                        }
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                                     default:
                                         limpaTela();
                                         System.err.println("Opção inválida!");
-                                        break;
+                                        continue;
                                 }
+<<<<<<< HEAD
                                 break;
+=======
+>>>>>>> a0da1afcefbb468c98fb10e4d32b445343d3f3f9
                             default:
                                 limpaTela();
                                 System.err.println("Opção inválida!");
-                                break;
+                                continue;
                         }
                         break;
 
