@@ -1,10 +1,14 @@
 package com.company.ifnet;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Professor extends Usuario{
 
     private String area;
+    private ArrayList<Disciplina> disciplinaMinistrada = new ArrayList<>();
+
+
 
     public Professor(String nome, String prontuario, String area) {
         super(nome, prontuario);
@@ -17,6 +21,15 @@ public class Professor extends Usuario{
 
     public void setArea(String area) {
         this.area = area;
+    }
+
+    public void addDisciplinaMinistrada(Disciplina disciplina) {
+        disciplinaMinistrada.add(disciplina);
+    }
+    public void listarDisciplinaMinistrada() {
+        for (Disciplina discplinas: this.disciplinaMinistrada) {
+            System.out.println(discplinas.getNome());
+        }
     }
 
     public static Professor cadastrarProfessor() throws CadastroException {

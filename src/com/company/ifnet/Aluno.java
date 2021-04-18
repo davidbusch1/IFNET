@@ -1,10 +1,16 @@
 package com.company.ifnet;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Aluno extends Usuario{
 
     private String email, curso;
+    private ArrayList<Disciplina> disciplinaCursadas = new ArrayList<>();
+    private ArrayList<Disciplina> disciplinaCursando = new ArrayList<>();
+    private ArrayList<Conteudo> listaConteudo = new ArrayList<>();
+
+
 
     public Aluno(String nome, String prontuario, String email, String curso) {
         super(nome, prontuario);
@@ -26,6 +32,32 @@ public class Aluno extends Usuario{
 
     public void setCurso(String curso) {
         this.curso = curso;
+    }
+
+    public void addDisciplinaCursada(Disciplina disciplina) {
+        disciplinaCursadas.add(disciplina);
+    }
+    public void listarDisciplinaCursada() {
+        for (Disciplina discplinas: this.disciplinaCursadas) {
+            System.out.println(discplinas.getNome());
+        }
+    }
+    public void addDisciplinaCursando(Disciplina disciplina) {
+        disciplinaCursando.add(disciplina);
+    }
+    public void listarDisciplinaCursando() {
+        for (Disciplina discplinas: this.disciplinaCursando) {
+            System.out.println(discplinas.getNome());
+        }
+    }
+
+    public void addConteudo(Conteudo conteudo) {
+        listaConteudo.add(conteudo);
+    }
+    public void listarConteudos() {
+        for (Conteudo conteudoItem: this.listaConteudo) {
+            System.out.println(conteudoItem.toString());
+        }
     }
 
     public static Aluno cadastrarAluno() throws CadastroException{
