@@ -28,6 +28,7 @@ public class Disciplina{
         this.area = area;
     }
 
+<<<<<<< HEAD
     public String getCodigo() {
         return codigo;
     }
@@ -42,6 +43,10 @@ public class Disciplina{
         System.out.print("Código da Disciplina: ");
         String disciplinaCodigo = leitura.nextLine();
         //------------------------------------------
+=======
+    public static Disciplina cadastrarDisciplina() throws CadastroException {
+        Scanner leitura = new Scanner(System.in);
+>>>>>>> dd6847c7d2f0507bfb16ec140a74aa1594456a69
         System.out.print("Nome da Disciplina: ");
         String nomeDisciplina = leitura.nextLine();
         if (nomeDisciplina.equals("")) {
@@ -52,16 +57,23 @@ public class Disciplina{
             if (areaDisciplina.equals("")) {
                 throw new CadastroException("Você deve digitar uma Área para a Disciplina!");
             } else {
+<<<<<<< HEAD
                 Disciplina d = new Disciplina(nomeDisciplina, areaDisciplina, disciplinaCodigo);
+=======
+                Disciplina d = new Disciplina(nomeDisciplina, areaDisciplina);
+>>>>>>> dd6847c7d2f0507bfb16ec140a74aa1594456a69
                 System.out.println("Disciplina cadastrada com sucesso!");
                 return d;
             }
         }
     }
+<<<<<<< HEAD
 
     @Override
     public String toString() {
         return "Nome: " + this.getNome() + "  |  " + "Area: " + this.getArea() + "  |  " +
                 "Código: " + this.getCodigo();
     }
+=======
+>>>>>>> dd6847c7d2f0507bfb16ec140a74aa1594456a69
 }

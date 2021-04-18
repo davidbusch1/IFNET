@@ -1,6 +1,9 @@
 package com.company.ifnet;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+>>>>>>> dd6847c7d2f0507bfb16ec140a74aa1594456a69
 import java.util.Scanner;
 
 public class Professor extends Usuario{
@@ -23,6 +26,7 @@ public class Professor extends Usuario{
         this.area = area;
     }
 
+<<<<<<< HEAD
     public void addDisciplinaMinistrada(Disciplina disciplina) {
         disciplinaMinistrada.add(disciplina);
     }
@@ -32,6 +36,8 @@ public class Professor extends Usuario{
         }
     }
 
+=======
+>>>>>>> dd6847c7d2f0507bfb16ec140a74aa1594456a69
     public static Professor cadastrarProfessor() throws CadastroException {
         Scanner leitura = new Scanner(System.in);
         System.out.print("Nome do Professor: ");

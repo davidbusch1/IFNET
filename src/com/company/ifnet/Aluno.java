@@ -1,6 +1,9 @@
 package com.company.ifnet;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+>>>>>>> dd6847c7d2f0507bfb16ec140a74aa1594456a69
 import java.util.Scanner;
 
 public class Aluno extends Usuario{
@@ -34,6 +37,7 @@ public class Aluno extends Usuario{
         this.curso = curso;
     }
 
+<<<<<<< HEAD
     public void addDisciplinaCursada(Disciplina disciplina) {
         disciplinaCursadas.add(disciplina);
     }
@@ -60,6 +64,8 @@ public class Aluno extends Usuario{
         }
     }
 
+=======
+>>>>>>> dd6847c7d2f0507bfb16ec140a74aa1594456a69
     public static Aluno cadastrarAluno() throws CadastroException{
         Scanner leitura = new Scanner(System.in);
 
